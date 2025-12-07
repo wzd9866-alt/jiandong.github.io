@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIVERSAL 环球生物 宣传门户</title>
+  <style>
+    body {
+      font-family: "KaiTi", serif;
+      margin: 0;
+      background-color: #f0fdf4;
+      color: #2f4f4f;
+    }
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: "SimHei", sans-serif;
+      margin: 0;
+      font-size: 1.8em;
+    }
+    nav {
+      background: #059669;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background: #34d399;
+    }
+    .section {
+      margin: 20px;
+      background: #e0f2fe;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    h2 {
+      font-family: "SimHei", sans-serif;
+      color: #059669;
+      margin-bottom: 10px;
+    }
+    /* 图片区块 */
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .image-item {
+      width: 220px;
+      text-align: center;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .image-item img {
+      width: 100%;
+      border: 2px solid #34d399;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .image-description {
+      font-size: 0.95em;
+      font-style: italic;
+      color: #2f4f4f;
+    }
+    /* 视频区块 */
+    .video-box {
+      text-align: center;
+      margin: 15px 0;
+    }
+    .video-box video {
+      width: 100%;
+      max-width: 640px;
+      border: 2px solid #34d399;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      margin-bottom: 8px;
+    }
+    .video-description {
+      font-size: 1em;
+      text-align: center;
+      font-style: italic;
+    }
+    /* 音频区块 */
+    .audio-box {
+      text-align: center;
+      margin: 15px 0;
+    }
+    .audio-box audio {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 8px;
+    }
+    .audio-description {
+      font-size: 1em;
+      text-align: center;
+      font-style: italic;
+    }
+    /* 相关文章卡片 */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      font-family: "SimHei", sans-serif;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+    .card p {
+      margin-bottom: 10px;
+    }
+    .card a {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #34d399;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .card a:hover {
+      background: #059669;
+    }
+    footer {
+      text-align: center;
+      background: #1e3a8a;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UNIVERSAL 环球生物 宣传门户</h1>
+    <p>细胞修复 · 健康守护 · 活力再生</p>
+  </header>
+
+  <!-- 顶部导航 -->
+  <nav>
+    <a href="#images">图片展示</a>
+    <a href="#videos">视频展示</a>
+    <a href="#audios">音频展示</a>
+    <a href="#articles">相关文章</a>
+  </nav>
+
+  <!-- 图片区块 -->
+  <div class="section" id="images">
+    <h2>图片展示</h2>
+    <div class="image-gallery"></div>
+    <script>
+      const gallery = document.querySelector('.image-gallery');
+      for (let i = 0; i <= 16; i++) {
+        const item = document.createElement('div');
+        item.className = 'image-item';
+        item.innerHTML = `
+          <img src="UNIVERSAL 环球生物 - ${i}.jpg" alt="图片${i}">
+          <p class="image-description">UNIVERSAL 环球生物 - ${i}</p>
+        `;
+        gallery.appendChild(item);
+      }
+    </script>
+  </div>
+
+  <!-- 视频区块 -->
+  <div class="section" id="videos">
+    <h2>海拉细胞一号官方视频一</h2>
+    <div class="video-box">
+      <video controls poster="cover1.jpg">
+        <source src="海拉细胞一号官方视频一.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="video-description">海拉细胞一号官方视频一 · 肝脏健康科普内容</p>
+    </div>
+
+    <h2>视频展示二</h2>
+    <div class="video-box">
+      <video controls poster="cover2.jpg">
+        <source src="video2.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="video-description">这是第二个视频，展示了肝脏细胞修复的过程与研究成果。</p>
+    </div>
+  </div>
+
+  <!-- 音频区块 -->
+  <div class="section" id="audios">
+    <h2>音频展示</h2>
+    <div class="audio-box">
+      <audio controls>
+        <source src="audio1.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      <p class="audio-description">音频一 · 健康讲解录音</p>
+    </div>
+    <div class="audio-box">
+      <audio controls>
+        <source src="audio2.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      <p class="audio-description">音频二 · 专家访谈片段</p>
+    </div>
+  </div>
+
+  <!-- 相关文章区块 -->
+  <div class="section" id="articles">
+    <h2>相关文章</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>微信文章一</h3>
+        <p>肝脏健康相关内容，介绍细胞修复与养护理念。</p>
+        <a href="https://mp.weixin.qq.com/s/QaMXbV6vLYd7jnmLkt6Egw" target="_blank">阅读文章</a>
+      </div>
+      <div class="card">
+        <h3>微信文章二</h3>
+        <p>细胞修复相关内容，展示研究成果与应用案例。</p>
+        <a href="https://mp.weixin.qq.com/s/VemSXlIK9erZwZxoDz-c2w" target="_blank">阅读文章</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 UNIVERSAL 环球生物</p>
+  </footer>
+</body>
+</html>
