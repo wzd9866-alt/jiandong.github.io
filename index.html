@@ -1,151 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UNIVERSAL 环球生物 宣传门户</title>
   <style>
-    body {
-      font-family: "KaiTi", serif;
-      margin: 0;
-      background-color: #f0fdf4;
-      color: #2f4f4f;
-    }
-    header {
-      background: #1e3a8a;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    header h1 {
-      font-family: "SimHei", sans-serif;
-      margin: 0;
-      font-size: 1.8em;
-    }
-    nav {
-      background: #059669;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background: #34d399;
-    }
-    .section {
-      margin: 20px;
-      background: #e0f2fe;
-      padding: 15px;
-      border-radius: 8px;
-    }
-    h2 {
-      font-family: "SimHei", sans-serif;
-      color: #059669;
-      margin-bottom: 10px;
-    }
-    /* 图片区块 */
-    .image-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .image-item {
-      width: 220px;
-      text-align: center;
-      background: #ffffff;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .image-item img {
-      width: 100%;
-      border: 2px solid #34d399;
-      border-radius: 8px;
-      margin-bottom: 8px;
-    }
-    .image-description {
-      font-size: 0.95em;
-      font-style: italic;
-      color: #2f4f4f;
-    }
-    /* 视频区块 */
-    .video-box {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .video-box video {
-      width: 100%;
-      max-width: 640px;
-      border: 2px solid #34d399;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      margin-bottom: 8px;
-    }
-    .video-description {
-      font-size: 1em;
-      text-align: center;
-      font-style: italic;
-    }
-    /* 音频区块 */
-    .audio-box {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .audio-box audio {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 8px;
-    }
-    .audio-description {
-      font-size: 1em;
-      text-align: center;
-      font-style: italic;
-    }
-    /* 相关文章卡片 */
-    .card-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      font-family: "SimHei", sans-serif;
-      color: #1e3a8a;
-      margin-bottom: 10px;
-    }
-    .card p {
-      margin-bottom: 10px;
-    }
-    .card a {
-      display: inline-block;
-      padding: 8px 12px;
-      background: #34d399;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .card a:hover {
-      background: #059669;
-    }
-    footer {
-      text-align: center;
-      background: #1e3a8a;
-      color: white;
-      padding: 10px;
-      margin-top: 20px;
-    }
+    body {font-family:"Microsoft YaHei",sans-serif;margin:0;background:#f0fdf4;color:#2f4f4f;}
+    header {background:linear-gradient(90deg,#1e3a8a,#059669);color:white;padding:20px;text-align:center;}
+    nav {background:#059669;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a {color:white;padding:12px 18px;text-decoration:none;font-weight:bold;}
+    .section {margin:20px;background:#ffffffcc;padding:20px;border-radius:12px;}
+    h2 {color:#059669;text-align:center;}
+    .image-gallery {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .image-item {background:#fff;padding:10px;border-radius:12px;text-align:center;cursor:pointer;}
+    .image-item img {width:100%;border-radius:10px;margin-bottom:8px;}
+    .popup-overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:9999;}
+    .popup-overlay img {max-width:90%;max-height:90%;border-radius:10px;}
+    .video-box,.audio-box {background:#fff;padding:15px;border-radius:12px;margin-bottom:20px;text-align:center;}
+    .video-box video,.audio-box audio {width:100%;max-width:640px;border-radius:10px;margin-bottom:10px;}
+    .card-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .card {background:#fff;border-radius:12px;padding:15px;}
+    footer {text-align:center;background:linear-gradient(90deg,#059669,#1e3a8a);color:white;padding:15px;margin-top:30px;}
   </style>
 </head>
 <body>
@@ -154,7 +29,6 @@
     <p>细胞修复 · 健康守护 · 活力再生</p>
   </header>
 
-  <!-- 顶部导航 -->
   <nav>
     <a href="#images">图片展示</a>
     <a href="#videos">视频展示</a>
@@ -165,39 +39,23 @@
   <!-- 图片区块 -->
   <div class="section" id="images">
     <h2>图片展示</h2>
-    <div class="image-gallery"></div>
-    <script>
-      const gallery = document.querySelector('.image-gallery');
-      for (let i = 0; i <= 16; i++) {
-        const item = document.createElement('div');
-        item.className = 'image-item';
-        item.innerHTML = `
-          <img src="UNIVERSAL 环球生物 - ${i}.jpg" alt="图片${i}">
-          <p class="image-description">UNIVERSAL 环球生物 - ${i}</p>
-        `;
-        gallery.appendChild(item);
-      }
-    </script>
+    <div class="image-gallery" id="gallery"></div>
   </div>
 
   <!-- 视频区块 -->
   <div class="section" id="videos">
-    <h2>海拉细胞一号官方视频一</h2>
+    <h2>视频展示</h2>
     <div class="video-box">
       <video controls poster="cover1.jpg">
-        <source src="海拉细胞一号官方视频一.mp4" type="video/mp4">
-        您的浏览器不支持视频播放。
+        <source src="video1.mp4" type="video/mp4">
       </video>
-      <p class="video-description">海拉细胞一号官方视频一 · 肝脏健康科普内容</p>
+      <p>海拉细胞一号官方视频一 · 肝脏健康科普内容</p>
     </div>
-
-    <h2>视频展示二</h2>
     <div class="video-box">
       <video controls poster="cover2.jpg">
         <source src="video2.mp4" type="video/mp4">
-        您的浏览器不支持视频播放。
       </video>
-      <p class="video-description">这是第二个视频，展示了肝脏细胞修复的过程与研究成果。</p>
+      <p>视频二 · 肝脏细胞修复过程与研究成果</p>
     </div>
   </div>
 
@@ -207,16 +65,14 @@
     <div class="audio-box">
       <audio controls>
         <source src="audio1.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
       </audio>
-      <p class="audio-description">音频一 · 健康讲解录音</p>
+      <p>音频一 · 健康讲解录音</p>
     </div>
     <div class="audio-box">
       <audio controls>
         <source src="audio2.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
       </audio>
-      <p class="audio-description">音频二 · 专家访谈片段</p>
+      <p>音频二 · 专家访谈片段</p>
     </div>
   </div>
 
@@ -240,5 +96,38 @@
   <footer>
     <p>© 2025 UNIVERSAL 环球生物</p>
   </footer>
+
+  <!-- 放大图片弹窗 -->
+  <div class="popup-overlay" id="popup">
+    <img id="popup-img" src="" alt="放大图">
+  </div>
+
+  <!-- 图片脚本 -->
+  <script>
+    const gallery = document.getElementById('gallery');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+
+    // 循环生成图片（中文文件名）
+    for (let i = 0; i <= 16; i++) {
+      const item = document.createElement('div');
+      item.className = 'image-item';
+      const filename = `UNIVERSAL 环球生物 - ${i}.jpg`;
+      item.innerHTML = `
+        <img src="${filename}" alt="图片${i}">
+        <p class="image-description">${filename}</p>
+      `;
+      item.onclick = () => {
+        popupImg.src = filename;
+        popup.style.display = 'flex';
+      };
+      gallery.appendChild(item);
+    }
+
+    // 点击关闭放大图
+    popup.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
