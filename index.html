@@ -45,18 +45,7 @@
   <!-- 视频区块 -->
   <div class="section" id="videos">
     <h2>视频展示</h2>
-    <div class="video-box">
-      <video controls poster="cover1.jpg">
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      <p>海拉细胞一号官方视频一 · 肝脏健康科普内容</p>
-    </div>
-    <div class="video-box">
-      <video controls poster="cover2.jpg">
-        <source src="video2.mp4" type="video/mp4">
-      </video>
-      <p>视频二 · 肝脏细胞修复过程与研究成果</p>
-    </div>
+    <div id="video-gallery"></div>
   </div>
 
   <!-- 音频区块 -->
@@ -102,13 +91,13 @@
     <img id="popup-img" src="" alt="放大图">
   </div>
 
-  <!-- 图片脚本 -->
+  <!-- 脚本 -->
   <script>
+    // 图片区块自动生成（中文文件名）
     const gallery = document.getElementById('gallery');
     const popup = document.getElementById('popup');
     const popupImg = document.getElementById('popup-img');
 
-    // 循环生成图片（中文文件名）
     for (let i = 0; i <= 16; i++) {
       const item = document.createElement('div');
       item.className = 'image-item';
@@ -123,10 +112,29 @@
       };
       gallery.appendChild(item);
     }
-
-    // 点击关闭放大图
     popup.addEventListener('click', () => {
       popup.style.display = 'none';
+    });
+
+    // 视频区块自动生成（中文文件名）
+    const videoGallery = document.getElementById('video-gallery');
+    const videoFiles = [
+      { filename: "海拉细胞一号 - 0.mp4", description: "海拉细胞一号 · 宣传视频 0" },
+      { filename: "海拉细胞一号 - 1.mp4", description: "海拉细胞一号 · 宣传视频 1" },
+      { filename: "海拉细胞一号12月上市发布.mp4", description: "海拉细胞一号 · 12月上市发布" }
+    ];
+
+    videoFiles.forEach(video => {
+      const box = document.createElement('div');
+      box.className = 'video-box';
+      box.innerHTML = `
+        <video controls>
+          <source src="${video.filename}" type="video/mp4">
+          您的浏览器不支持视频播放。
+        </video>
+        <p>${video.description}</p>
+      `;
+      videoGallery.appendChild(box);
     });
   </script>
 </body>
